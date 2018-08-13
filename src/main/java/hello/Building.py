@@ -1,6 +1,6 @@
 # A python module that implements a Java interface to
 # create a building object
-from hello import BuildingInterface
+import hello.BuildingInterface as BuildingInterface
 
 class Building(BuildingInterface):
     def __init__(self, name, address, id):
