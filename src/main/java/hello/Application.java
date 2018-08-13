@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
     public static void main(String[] args) {
+        /*
         //page 193 Utilizing PythonInterpreter
         PythonInterpreter interp = new PythonInterpreter();
         interp.exec("import sys");
@@ -33,6 +34,16 @@ public class Application {
 
         //run the spring application
         //SpringApplication.run(Application.class, args);
+        */
+        JythonObjectFactory factory = JythonObjectFactory.getInstance();
+        BuildingType building = (BuildingType) factory.createObject(
+                BuildingType.class, "Building");
+        // Populate the object with values using the setter methods
+        building.setBuildingName("BUIDING-A");
+        building.setBuildingAddress("100 MAIN ST.");
+        building.setBuildingId(1);
+        System.out.println(building.getBuildingId() + " " + building.getBuildingName() + " " +
+                building.getBuildingAddress());
     }
 
 }
