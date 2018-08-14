@@ -29,24 +29,70 @@
             <optional>true</optional>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.python/jython -->
+        <!-- remove this
         <dependency>
             <groupId>org.python</groupId>
             <artifactId>jython</artifactId>
             <version>2.7.0</version>
         </dependency>
-
+        -->
+        <!-- https://mvnrepository.com/artifact/org.python/jython-standalone -->
+        <!--
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython-standalone</artifactId>
+            <version>2.7.1</version>
+        </dependency>
+-->
+        <!--
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython</artifactId>
+            <version>2.7.1b3</version>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython-standalone</artifactId>
+            <version>2.7.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/net.sf.mavenjython/jython-compile-maven-plugin -->
+        <dependency>
+            <groupId>net.sf.mavenjython</groupId>
+            <artifactId>jython-compile-maven-plugin</artifactId>
+            <version>1.2</version>
+        </dependency>
     </dependencies>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
-
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>net.sf.mavenjython</groupId>
+                <artifactId>jython-compile-maven-plugin</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jython</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- including library
+                    <libraries>
+                        <param>nose</param>
+                    </libraries>
+                    -->
+                </configuration>
             </plugin>
         </plugins>
     </build>
