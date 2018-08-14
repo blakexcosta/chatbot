@@ -28,29 +28,6 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.python/jython -->
-        <!-- remove this
-        <dependency>
-            <groupId>org.python</groupId>
-            <artifactId>jython</artifactId>
-            <version>2.7.0</version>
-        </dependency>
-        -->
-        <!-- https://mvnrepository.com/artifact/org.python/jython-standalone -->
-        <!--
-        <dependency>
-            <groupId>org.python</groupId>
-            <artifactId>jython-standalone</artifactId>
-            <version>2.7.1</version>
-        </dependency>
--->
-        <!--
-        <dependency>
-            <groupId>org.python</groupId>
-            <artifactId>jython</artifactId>
-            <version>2.7.1b3</version>
-        </dependency>
-        -->
         <dependency>
             <groupId>org.python</groupId>
             <artifactId>jython-standalone</artifactId>
@@ -61,6 +38,11 @@
             <groupId>net.sf.mavenjython</groupId>
             <artifactId>jython-compile-maven-plugin</artifactId>
             <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -97,4 +79,16 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
