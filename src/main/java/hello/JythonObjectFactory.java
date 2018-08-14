@@ -44,6 +44,8 @@ public class JythonObjectFactory {
         interpreter.exec("location = os.getcwd()");
         PyObject location = interpreter.get("location");
         System.out.println("current location of interpreter: " + location);
+        //added the hello module to the path. note that it is the containing directory that is needed
+        // TODO: 8/13/18 make path adding modular/ better use of SOC is needed 
         interpreter.exec("sys.path.append('./src/main/java/hello')");
         interpreter.exec("from " + moduleName + " import " + moduleName);
 
